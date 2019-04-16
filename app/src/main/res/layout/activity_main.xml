@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/toolbar_main" />
+
+    <Button
+        android:id="@+id/btn_qrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip"
+        android:text="开始扫码" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dip"
+        android:text="扫描结果" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"
+        android:layout_marginTop="20dip"
+        android:background="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dip">
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:hint="请输入二维码内容"
+            android:lines="2" />
+
+        <Button
+            android:id="@+id/btn_generate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="6dip"
+            android:text="生成二维码" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_qrcode"
+        android:layout_width="200dip"
+        android:layout_height="200dip"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
