@@ -13,7 +13,7 @@ Android ZXing二维码扫描库，支持二维码扫描和生成，演示效果�
 
 ![image](https://github.com/ahuyangdong/QrCodeLib/blob/master/demo.gif)
 
-特别提醒：本分支为androidx支持版本，如需非androidx版本库，请至[androidx分支](https://github.com/ahuyangdong/QrCodeLib/tree/androidx)
+特别提醒：master分支使用的是appcompact包，如需支持AndroidX版本库，请至[androidx分支](https://github.com/ahuyangdong/QrCodeLib/tree/androidx)
 
 ## 博客讲解
 https://blog.csdn.net/ahuyangdong/article/details/89339970
