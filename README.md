@@ -2,10 +2,9 @@
 
 ![platform](https://img.shields.io/badge/platform-Android-lightgrey.svg)
 ![Gradle](https://img.shields.io/badge/Gradle-4.10.1-brightgreen.svg)
-![progress](http://progressed.io/bar/100?title=completed)
 [![last commit](https://img.shields.io/github/last-commit/ahuyangdong/QrCodeLib.svg)](https://github.com/ahuyangdong/QrCodeLib/commits/master)
 ![repo size](https://img.shields.io/github/repo-size/ahuyangdong/QrCodeLib.svg)
-[![Licence](https://img.shields.io/github/license/ahuyangdong/QrCodeLib.svg)](https://github.com/ahuyangdong/TabCustom/blob/master/LICENSE)
+[![Licence](https://img.shields.io/github/license/ahuyangdong/QrCodeLib.svg)](https://github.com/ahuyangdong/QrCodeLib/blob/master/LICENSE)
 
 A Android library for qrcode scanning and generating, depends on zxing library
 
@@ -13,6 +12,8 @@ A Android library for qrcode scanning and generating, depends on zxing library
 Android ZXing二维码扫描库，支持二维码扫描和生成，演示效果：
 
 ![image](https://github.com/ahuyangdong/QrCodeLib/blob/master/demo.gif)
+
+特别提醒：本分支为androidx支持版本，如需非androidx版本库，请至[master分支](https://github.com/dappley/go-dappley/tree/master)
 
 ## 博客讲解
 https://blog.csdn.net/ahuyangdong/article/details/89339970
