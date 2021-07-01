@@ -25,7 +25,7 @@
             app:frame_color="@color/viewfinder_frame"
             app:label_text="@string/layout_focus_qrcode"
             app:label_text_color="@color/note_text_color"
-            app:label_text_margin_top="8dip"
+            app:label_text_margin_top="8dp"
             app:label_text_size="16sp"
             app:laser_color="@color/laser_color"
             app:mask_color="@color/viewfinder_mask"
@@ -34,12 +34,12 @@
 
         <ImageButton
             android:id="@+id/btn_flash"
-            android:layout_width="40dip"
-            android:layout_height="40dip"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="30dip"
+            android:layout_marginBottom="30dp"
             android:background="?attr/selectableItemBackground"
-            android:padding="6dip"
+            android:padding="6dp"
             android:scaleType="centerInside"
             android:src="@drawable/flash_off" />
     </FrameLayout>

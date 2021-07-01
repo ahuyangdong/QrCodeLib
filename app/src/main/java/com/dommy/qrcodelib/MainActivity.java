@@ -35,14 +35,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        btnQrCode = (Button) findViewById(R.id.btn_qrcode);
+        btnQrCode = findViewById(R.id.btn_qrcode);
         btnQrCode.setOnClickListener(this);
-        btnGenerate = (Button) findViewById(R.id.btn_generate);
+        btnGenerate = findViewById(R.id.btn_generate);
         btnGenerate.setOnClickListener(this);
 
-        tvResult = (TextView) findViewById(R.id.txt_result);
-        etContent = (EditText) findViewById(R.id.et_content);
-        imgQrcode = (ImageView) findViewById(R.id.img_qrcode);
+        tvResult = findViewById(R.id.txt_result);
+        etContent = findViewById(R.id.et_content);
+        imgQrcode = findViewById(R.id.img_qrcode);
     }
 
     // 开始扫码

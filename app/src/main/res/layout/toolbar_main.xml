@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
-    app:contentInsetStart="0dip">
+    app:contentInsetStart="0dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
