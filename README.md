@@ -39,13 +39,16 @@ https://github.com/HappyMiao/QrCodeScan
 ```gradle
 buildscript {
     repositories {
-        maven { url 'http://kotlinx.com/repository' }
+        ...
+        mavenCentral()
+        //或者
+        maven { url 'https://kotlinx.com/nexus/repository/maven-public' }
     }
 }
 ```
 #### 项目工程gradle中添加
 ```gradle
-implementation 'com.kotlinx.zxing-lib:zxing-lib:1.0.0'
+implementation 'com.kotlinx:zxing-lib:1.0.0'
 ```
 
 
