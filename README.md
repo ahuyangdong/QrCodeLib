@@ -50,7 +50,7 @@ implementation 'com.kotlinx:zxing-lib:1.0.0'
 ```
 
 ### 扫描二维码
-```java
+```kotlin
 //扫码结果
 private val registerCapture = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
     if (result.resultCode == Activity.RESULT_OK) {
