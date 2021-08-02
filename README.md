@@ -1,7 +1,7 @@
 # QrCodeLib
 
 ![platform](https://img.shields.io/badge/platform-Android-lightgrey.svg)
-![Gradle](https://img.shields.io/badge/Gradle-4.10.1-brightgreen.svg)
+![Gradle](https://img.shields.io/badge/Gradle-7.1-brightgreen.svg)
 [![last commit](https://img.shields.io/github/last-commit/ahuyangdong/QrCodeLib.svg)](https://github.com/ahuyangdong/QrCodeLib/commits/master)
 ![repo size](https://img.shields.io/github/repo-size/ahuyangdong/QrCodeLib.svg)
 [![Licence](https://img.shields.io/github/license/ahuyangdong/QrCodeLib.svg)](https://github.com/ahuyangdong/QrCodeLib/blob/master/LICENSE)
