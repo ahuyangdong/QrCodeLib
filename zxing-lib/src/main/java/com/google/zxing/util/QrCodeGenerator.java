@@ -25,8 +25,7 @@ public class QrCodeGenerator {
         hintsMap.put(EncodeHintType.MARGIN, 0);
         try {
             BitMatrix bitMatrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, width, height, hintsMap);
-            Bitmap bitmap = bitMatrix2Bitmap(bitMatrix);
-            return bitmap;
+            return bitMatrix2Bitmap(bitMatrix);
         } catch (WriterException e) {
             e.printStackTrace();
         }

@@ -44,19 +44,6 @@ public final class CameraManager {
 
     private static CameraManager cameraManager;
 
-    static final int SDK_INT; // Later we can use Build.VERSION.SDK_INT
-
-    static {
-        int sdkInt;
-        try {
-            sdkInt = Integer.parseInt(Build.VERSION.SDK);
-        } catch (NumberFormatException nfe) {
-            // Just to be safe
-            sdkInt = 10000;
-        }
-        SDK_INT = sdkInt;
-    }
-
     private final Context context;
     private final CameraConfigurationManager configManager;
     private Camera camera;
