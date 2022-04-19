@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
@@ -75,14 +75,19 @@ public class CaptureActivity extends AppCompatActivity implements Callback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
         CameraManager.init(getApplication());
-        viewfinderView = findViewById(R.id.viewfinder_content);
-        back = findViewById(R.id.btn_back);
-        back.setOnClickListener(v -> finish());
+        viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_content);
+        back = (ImageButton) findViewById(R.id.btn_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        btnFlash = findViewById(R.id.btn_flash);
+        btnFlash = (ImageButton) findViewById(R.id.btn_flash);
         btnFlash.setOnClickListener(flashListener);
 
-        btnAlbum = findViewById(R.id.btn_album);
+        btnAlbum = (Button) findViewById(R.id.btn_album);
         btnAlbum.setOnClickListener(albumOnClick);
 
         hasSurface = false;
@@ -90,11 +95,14 @@ public class CaptureActivity extends AppCompatActivity implements Callback {
 
     }
 
-    private View.OnClickListener albumOnClick = view -> {
-        //打开手机中的相册
-        Intent innerIntent = new Intent(Intent.ACTION_GET_CONTENT); //"android.intent.action.GET_CONTENT"
-        innerIntent.setType("image/*");
-        startActivityForResult(innerIntent, REQUEST_CODE_SCAN_GALLERY);
+    private View.OnClickListener albumOnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            //打开手机中的相册
+            Intent innerIntent = new Intent(Intent.ACTION_GET_CONTENT); //"android.intent.action.GET_CONTENT"
+            innerIntent.setType("image/*");
+            startActivityForResult(innerIntent, REQUEST_CODE_SCAN_GALLERY);
+        }
     };
 
     @Override
@@ -111,7 +119,7 @@ public class CaptureActivity extends AppCompatActivity implements Callback {
 
     /**
      * 处理选择的图片
-     * @param data Intent
+     * @param data
      */
     private void handleAlbumPic(Intent data) {
         //获取选中图片的路径
@@ -121,29 +129,32 @@ public class CaptureActivity extends AppCompatActivity implements Callback {
         mProgress.setMessage("正在扫描...");
         mProgress.setCancelable(false);
         mProgress.show();
-        runOnUiThread(() -> {
-            Result result = scanningImage(uri);
-            mProgress.dismiss();
-            if (result != null) {
-                Intent resultIntent = new Intent();
-                Bundle bundle = getIntent().getExtras();
-                if (bundle == null) {
-                    bundle = new Bundle();
-                }
-                bundle.putString(Constant.INTENT_EXTRA_KEY_QR_SCAN, result.getText());
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Result result = scanningImage(uri);
+                mProgress.dismiss();
+                if (result != null) {
+                    Intent resultIntent = new Intent();
+                    Bundle bundle = getIntent().getExtras();
+                    if (bundle == null) {
+                        bundle = new Bundle();
+                    }
+                    bundle.putString(Constant.INTENT_EXTRA_KEY_QR_SCAN, result.getText());
 
-                resultIntent.putExtras(bundle);
-                CaptureActivity.this.setResult(RESULT_OK, resultIntent);
-                finish();
-            } else {
-                Toast.makeText(CaptureActivity.this, R.string.note_identify_failed, Toast.LENGTH_SHORT).show();
+                    resultIntent.putExtras(bundle);
+                    CaptureActivity.this.setResult(RESULT_OK, resultIntent);
+                    finish();
+                } else {
+                    Toast.makeText(CaptureActivity.this, R.string.note_identify_failed, Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
     /**
      * 扫描二维码图片的方法
-     * @param uri Uri
+     * @param uri
      * @return
      */
     public Result scanningImage(Uri uri) {
@@ -172,7 +183,7 @@ public class CaptureActivity extends AppCompatActivity implements Callback {
     @Override
     protected void onResume() {
         super.onResume();
-        SurfaceView surfaceView = findViewById(R.id.scanner_view);
+        SurfaceView surfaceView = (SurfaceView) findViewById(R.id.scanner_view);
         SurfaceHolder surfaceHolder = surfaceView.getHolder();
         if (hasSurface) {
             initCamera(surfaceHolder);
@@ -321,7 +332,12 @@ public class CaptureActivity extends AppCompatActivity implements Callback {
     /**
      * When the beep has finished playing, rewind to queue up another one.
      */
-    private final OnCompletionListener beepListener = mediaPlayer -> mediaPlayer.seekTo(0);
+    private final OnCompletionListener beepListener = new OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            mediaPlayer.seekTo(0);
+        }
+    };
 
     /**
      *  闪光灯开关按钮

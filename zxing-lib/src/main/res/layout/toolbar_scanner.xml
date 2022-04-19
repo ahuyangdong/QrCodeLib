@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
-    app:contentInsetStart="0dp">
+    app:contentInsetStart="0dip">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,11 +14,11 @@
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
             android:layout_centerVertical="true"
             android:background="?attr/selectableItemBackground"
-            android:padding="14dp"
+            android:padding="14dip"
             android:scaleType="centerCrop"
             android:src="@drawable/btn_back" />
 
@@ -33,7 +33,7 @@
 
         <Button
             android:id="@+id/btn_album"
-            android:layout_width="66dp"
+            android:layout_width="66dip"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -42,4 +42,4 @@
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
     </RelativeLayout>
-</androidx.appcompat.widget.Toolbar>
+</android.support.v7.widget.Toolbar>

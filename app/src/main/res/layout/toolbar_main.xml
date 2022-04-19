@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
-    app:contentInsetStart="0dp">
+    app:contentInsetStart="0dip">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,4 +22,4 @@
             android:textSize="18sp" />
 
     </RelativeLayout>
-</androidx.appcompat.widget.Toolbar>
+</android.support.v7.widget.Toolbar>

@@ -103,7 +103,7 @@ public final class ViewfinderView extends View {
         paint = new Paint();
         paint.setAntiAlias(true);
         scannerAlpha = 0;
-        possibleResultPoints = new HashSet<>(5);
+        possibleResultPoints = new HashSet<ResultPoint>(5);
 
 
     }
